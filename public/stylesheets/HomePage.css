@@ -1,0 +1,64 @@
+.homepage
+{
+    background-image: url(../images/bg.jpg);
+    background-position: 50% 50%;
+}
+.home-img img
+{
+    height: 100%;
+    width: 75%;
+}
+.home-text
+{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}   
+.home-text h1
+{
+    padding: 10px;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+   
+}  
+.home-text p
+{
+    border-top: 5px solid white;
+    width: 90%;
+    padding: 15px 25px 15px 25px;
+    text-align: center;
+}
+.after-section
+{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    
+    background-color: #292d33;
+    color: white;
+  
+}
+.mid-box-content
+{
+    padding: 25px 10px 25px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e43b76;
+}
+h5
+{
+    margin: 20px 0px 10px 0px;
+    border-bottom: 3px solid white;
+}
+.box-imgs img
+{
+    height: 100%;
+    width: 100%;
+}
+    

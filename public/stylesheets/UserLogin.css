@@ -1,0 +1,16 @@
+.head-row
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.head-row h1
+{
+    border-bottom: 3px solid black;
+}
+.login-img img
+{
+    height: 100%;
+    width: 100%;
+}

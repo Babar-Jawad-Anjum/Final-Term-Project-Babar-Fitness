@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Supplements</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/707861f521.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- custom css -->
+    <link rel='stylesheet' href='/stylesheets/ListSupplement.css' />
+  </head>
+  <body>
+
+    <!-- Embedding navbar from partials folder -->
+    <%-include("../Partials/NavBar"); %>
+      
+    <div class="container-fluid">
+
+      <div class="row supp-heading">
+        <h1>Supplements Details</h1>
+      </div>
+      <% if(admin) 
+      {%>
+        <a class="btn btn-primary btn-sm m-2 p-2 float-right" href="/supplement/add">Add New Supplement</a>
+      <%}%>
+      
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">PRICE( PKR )</th>
+            <th scope="col">SERVINGS</th>
+            <th scope="col">DISCOUNT</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let i=0; i<supplement.length; i++)
+          {%>
+            <tr>
+              <th scope="row"><%=i+1%></th>
+              <td><%=supplement[i].Name%></td>
+              <td><%=supplement[i].Price%></td>
+              <td><%=supplement[i].Servings%></td>
+              <td><%=supplement[i].Discount%></td>
+              <td> 
+              <% if(admin) 
+                {%>
+                  <a class="btn btn-warning btn-sm mr-2" href="/supplement/edit/<%=supplement[i]._id%>">Edit</a>
+              <%}%>
+              <% if(admin) 
+                {%>
+                  <a class="btn btn-danger btn-sm mr-2" href="/supplement/delete/<%=supplement[i]._id%>">Delete</a>
+              <%}%>
+              <% if(!admin) 
+                {%>
+                  <a class="btn btn-secondary btn-sm mr-2" href="/supplement/cart/<%=supplement[i]._id%>">Add to Cart</a>
+              <%}%>
+              </td> 
+            </tr>
+          <% }%>
+        </tbody>
+      </table>
+
+    </div>
+    <!-- Embedding footer from partials folder -->
+    <%-include("../Partials/Footer"); %>
+  </body>
+</html>
