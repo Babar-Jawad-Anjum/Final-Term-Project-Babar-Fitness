@@ -21,7 +21,7 @@
 
     <!-- Embedding navbar from partials folder -->
     <%-include("./Partials/NavBar"); %>
-    <% var total = 0; %> 
+    <!-- <% var total = 0; %>  -->
     <div class="container-fluid">
       <table class="table">
         <thead class="thead-dark">
@@ -37,7 +37,7 @@
         <tbody>
           <% for(let i=0; i<cart.length; i++)
           {%>
-            <% total +=  Number(cart[i].Price); %>
+            <!-- <% total +=  Number(cart[i].Price); %> -->
             <tr>
               <th scope="row"><%=i+1%></th>
               <td><%=cart[i].Name%></td>
@@ -50,12 +50,12 @@
             </tr>
           <% }%>
         </tbody>
-        <tfoot>
+        <!-- <tfoot>
           <tr>
             <td>Total</td>
             <td><%=total%> </td>
           </tr>
-        </tfoot>
+        </tfoot> -->
       </table>
     </div>
     <!-- Embedding footer from partials folder -->
